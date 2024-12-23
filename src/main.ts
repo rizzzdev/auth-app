@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
   app.enableCors({
-    origin: 'https://www.webtools.services/online-rest-api-client',
+    origin: 'http://reqbin.com',
   });
   app.use(cookieParser());
   await app.listen(configService.get('PORT'));

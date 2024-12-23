@@ -13,7 +13,7 @@ export class UserMiddleware implements NestMiddleware {
   ) {}
 
   async use(request: Request, response: Response, next: () => void) {
-    const accessToken = request.headers.authorization.split(' ')[1];
+    const accessToken = request?.headers?.authorization?.split(' ')[1];
     try {
       const payload = verify(
         accessToken,

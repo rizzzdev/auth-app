@@ -22,13 +22,13 @@ export class LoginController {
       error: result.error,
       status: result.status,
       issues: result.issues,
-      data: result.data,
+      data: result?.data,
     };
     response
-      .cookie('refresh-token', result.data.refreshToken ?? '', {
+      .cookie('refresh-token', result?.data?.refreshToken ?? '', {
         maxAge: 24 * 60 * 60 * 1000,
       })
-      .cookie('access-token', result.data.accessToken ?? '', {
+      .cookie('access-token', result?.data?.accessToken ?? '', {
         maxAge: 10 * 60 * 1000,
       })
       .status(result.status)

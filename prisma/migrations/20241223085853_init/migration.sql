@@ -6,6 +6,7 @@ CREATE TABLE "Users" (
     "id" TEXT NOT NULL,
     "username" TEXT NOT NULL,
     "password" TEXT NOT NULL,
+    "registeredAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "role" "Role" NOT NULL DEFAULT 'BASIC',
 
     CONSTRAINT "Users_pkey" PRIMARY KEY ("id")
@@ -36,7 +37,6 @@ CREATE TABLE "Token" (
     "id" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "loginAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "ipAddress" TEXT NOT NULL,
     "refreshToken" TEXT NOT NULL,
 
     CONSTRAINT "Token_pkey" PRIMARY KEY ("id")

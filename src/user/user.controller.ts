@@ -19,6 +19,7 @@ export class UserController {
     response
       .cookie('access-token', result.data.newAccessToken, {
         maxAge: 10 * 60 * 1000,
+        httpOnly: true,
       })
       .status(result.status)
       .send(result);

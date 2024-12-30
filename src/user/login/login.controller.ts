@@ -27,9 +27,13 @@ export class LoginController {
     response
       .cookie('refresh-token', result?.data?.refreshToken ?? '', {
         maxAge: 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        // domain: 'http://localhost:3000',
       })
       .cookie('access-token', result?.data?.accessToken ?? '', {
         maxAge: 10 * 60 * 1000,
+        httpOnly: true,
+        // domain: 'http://localhost:3000',
       })
       .status(result.status)
       .send(loginResponse);

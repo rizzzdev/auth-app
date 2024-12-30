@@ -21,7 +21,7 @@ export class LoginService {
     } catch (error) {
       const response: Response<null> = {
         error: true,
-        status: 200,
+        status: 400,
         issues: error.issues,
         data: null,
       };

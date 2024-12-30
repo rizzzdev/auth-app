@@ -3,8 +3,9 @@ import { ZodIssue } from 'zod';
 export interface RegisterRequest {
   username: string;
   password: string;
+  confirmPassword: string;
   firstName: string;
-  lastName: string;
+  lastName?: string;
 }
 
 export interface LoginRequest {
